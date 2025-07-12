@@ -46,4 +46,9 @@ BPS is a handheld or drone-mounted device that uses **multi-spectrum scanning**,
 ---
 
 ## 📁 File Structure
+## ⚙️ Setup & Installation
 
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/haneefa96/BioSentient-Scanner.git
+   cd BioSentient-Scanner
