@@ -45,13 +45,6 @@ BPS is a handheld or drone-mounted device that uses **multi-spectrum scanning**,
 
 ---
 
-## 📁 File Structure
-/ (root)
-├── src/              ← core scanning & AI code
-├── models/           ← trained ML model files
-├── docs/             ← detailed docs
-└── README.md
-
 ## ⚙️ Setup & Installation
 
 1. Clone the repo:
