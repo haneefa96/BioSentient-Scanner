@@ -52,3 +52,11 @@ BPS is a handheld or drone-mounted device that uses **multi-spectrum scanning**,
    ```bash
    git clone https://github.com/haneefa96/BioSentient-Scanner.git
    cd BioSentient-Scanner
+## Technical Architecture
+- **Hardware**: Compact NIR spectrometer (e.g., Texas Instruments DLP NIRscan), ARM-based microcontroller, OLED display for BioScore.
+- **Software**: Python-based AI model (TensorFlow) trained on polymer degradation datasets to predict BioScore and degradation timelines.
+- **Workflow**: 
+  1. Scan plastic using NIR spectroscopy.
+  2. Extract chemical composition (e.g., polymer type, additives).
+  3. AI model predicts biodegradability and environmental impact.
+  4. Output BioScore (0-100) and disposal recommendation.
