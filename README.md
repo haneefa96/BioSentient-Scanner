@@ -3,9 +3,12 @@
 
 ### A Smart Biodegradability Grader for Real Plastics, Real Time
 
+The BioSentient Plastics Scanner (BPS) is a handheld or drone-mounted device that uses multi-spectrum scanning and AI-driven spectroscopy to analyze plastic biodegradability in real-time. It assigns a "BioScore" (0-100) to indicate how truly biodegradable a plastic is and suggests proper disposal methods, combating greenwashing and aiding waste management.
+
 ## 🚀 Problem Tackled
 
 Many plastics labeled “biodegradable” aren’t. Mislabeling causes confusion, improper disposal, and worsens global pollution.
+Plastic pollution generates 300 million tons of waste annually, with 8 million tons entering oceans (UNEP, 2023). Over 60% of plastics labeled as "biodegradable" fail to degrade in real-world conditions due to misleading eco-labels (greenwashing). This misleads consumers, complicates recycling, and harms the environment. BPS addresses this by providing science-backed biodegradability assessments.
 
 ## 💡 Solution: BioSentient Plastics Scanner
 
@@ -18,6 +21,7 @@ BPS is a handheld or drone-mounted device that uses **multi-spectrum scanning**,
 
 ---
 
+
 ## 🎯 Key Features
 
 - ✅ AI modeling to predict degradation under various conditions (ocean, compost, landfill).
@@ -27,7 +31,7 @@ BPS is a handheld or drone-mounted device that uses **multi-spectrum scanning**,
 
 ---
 
-## 📊 Tech Stack
+## 📊 Technical Architechture
 
 - Python 🐍
 - AI/ML Model: PyTorch / Scikit-learn (placeholder)
@@ -45,12 +49,43 @@ BPS is a handheld or drone-mounted device that uses **multi-spectrum scanning**,
 
 ---
 
+## BioScore Methodology
+
+1. **Score Range**: 0-100 (100 = fully biodegradable in natural conditions).
+2. **Formula: BioScore** = (0.4 * Polymer Biodegradability) + (0.3 * Additive Impact) + (0.2 * Recyclability) + (0.1 * Disposal Compatibility).
+3. **Color Code**: Green (80-100), Yellow (50-79), Red (0-49).
+
+--
+
+## Example:
+- **PLA (bioplastic)**: BioScore = 85 (Green, Compost).
+- **PET (bottle plastic)**: BioScore = 30 (Red, Recycle).
+- **HDPE (container plastic)**: BioScore = 50 (Yellow, Recycle).
+
+--
+
+## Use Cases
+- **Consumer**: A shopper scans a plastic coffee cup, receiving a BioScore of 85 (Green, "Compost") to confirm it’s biodegradable.
+- **Industrial**: A recycling facility deploys a drone-mounted BPS to sort plastics in real-time, improving efficiency by 30%.
+-**Regulatory**: Environmental agencies use BPS to verify manufacturers’ eco-labels, ensuring compliance with laws like the EU Single-Use Plastics Directive.
+
+--
+
+## Scalability and Accessibility
+
+- **Consumer Model**: Affordable handheld scanner ($100-$200) using low-cost NIR spectrometers.
+- **Industrial Model**: Drone-mounted BPS ($5,000) for large-scale applications in landfills or recycling plants.
+- **Partnerships**: Collaborate with NGOs (e.g., Ocean Cleanup) or governments to subsidize costs and integrate with waste management systems.
+
 ## ⚙️ Setup & Installation
 
 1. Clone the repo:
    ```bash
    git clone https://github.com/haneefa96/BioSentient-Scanner.git
    cd BioSentient-Scanner
+
+--
+
 ## Technical Architecture
 - **Hardware**: Compact NIR spectrometer (e.g., Texas Instruments DLP NIRscan), ARM-based microcontroller, OLED display for BioScore.
 - **Software**: Python-based AI model (TensorFlow) trained on polymer degradation datasets to predict BioScore and degradation timelines.
@@ -59,199 +94,22 @@ BPS is a handheld or drone-mounted device that uses **multi-spectrum scanning**,
   2. Extract chemical composition (e.g., polymer type, additives).
   3. AI model predicts biodegradability and environmental impact.
   4. Output BioScore (0-100) and disposal recommendation.
-BioSentient Plastics Scanner (BPS)
 
-The BioSentient Plastics Scanner (BPS) is a handheld or drone-mounted device that uses multi-spectrum scanning and AI-driven spectroscopy to analyze plastic biodegradability in real-time. It assigns a "BioScore" (0-100) to indicate how truly biodegradable a plastic is and suggests proper disposal methods, combating greenwashing and aiding waste management.
+--
 
-Problem Statement
+##FAQ
 
-Plastic pollution generates 300 million tons of waste annually, with 8 million tons entering oceans (UNEP, 2023). Over 60% of plastics labeled as "biodegradable" fail to degrade in real-world conditions due to misleading eco-labels (greenwashing). This misleads consumers, complicates recycling, and harms the environment. BPS addresses this by providing science-backed biodegradability assessments.
+- **How accurate is the BioScore?** Trained on polymer datasets, with plans for lab validation with material scientists.
+- **Is it affordable?** Consumer model targets $100-$200; industrial model subsidized via partnerships.
+- **How does it scale?** Drone integration and API for waste management systems ensure scalability.
+- **What about complex plastics?** Multi-spectrum scanning detects additives and polymer blends for accurate assessment.
 
-Technical Architecture
+--
 
-Hardware
+## Future Work
 
+- Build a physical prototype using Raspberry Pi and SCiO spectrometer.
+- Collect real-world degradation data with university partners.
+- Develop a mobile app for consumer use and API for industrial integration.
+- Technical Architecture
 
-
-
-
-Spectrometer: Compact NIR spectrometer (e.g., SCiO or DLP NIRscan Nano) for multi-spectrum scanning of plastic composition.
-
-
-
-Microcontroller: Raspberry Pi 4 for data processing and AI inference.
-
-
-
-Display: OLED screen to show BioScore and disposal recommendations.
-
-
-
-Optional Drone Integration: Drone-mounted BPS (e.g., DJI Mavic with 5G connectivity) for industrial applications like landfill scanning.
-
-Software
-
-
-
-
-
-AI Model: Random Forest classifier (scikit-learn) trained on polymer degradation datasets to predict biodegradability.
-
-
-
-Libraries: Python, NumPy, scikit-learn for spectral analysis and BioScore calculation.
-
-
-
-Data Sources: Public polymer databases (e.g., NIST, PubChem) or lab-generated spectral data.
-
-Workflow
-
-
-
-
-
-Scan plastic item using NIR spectroscopy.
-
-
-
-Extract chemical composition (e.g., polymer type, additives like phthalates).
-
-
-
-AI model predicts biodegradability and environmental impact.
-
-
-
-Output BioScore (0-100) and disposal recommendation (e.g., "Compost").
-
-BioScore Methodology
-
-
-
-
-
-Score Range: 0-100 (100 = fully biodegradable in natural conditions).
-
-
-
-Formula: BioScore = (0.4 * Polymer Biodegradability) + (0.3 * Additive Impact) + (0.2 * Recyclability) + (0.1 * Disposal Compatibility).
-
-
-
-Color Code: Green (80-100), Yellow (50-79), Red (0-49).
-
-
-
-Example:
-
-
-
-
-
-PLA (bioplastic): BioScore = 85 (Green, Compost).
-
-
-
-PET (bottle plastic): BioScore = 30 (Red, Recycle).
-
-
-
-HDPE (container plastic): BioScore = 50 (Yellow, Recycle).
-
-Use Cases
-
-
-
-
-
-Consumer: A shopper scans a plastic coffee cup, receiving a BioScore of 85 (Green, "Compost") to confirm it’s biodegradable.
-
-
-
-Industrial: A recycling facility deploys a drone-mounted BPS to sort plastics in real-time, improving efficiency by 30%.
-
-
-
-Regulatory: Environmental agencies use BPS to verify manufacturers’ eco-labels, ensuring compliance with laws like the EU Single-Use Plastics Directive.
-
-Scalability and Accessibility
-
-
-
-
-
-Consumer Model: Affordable handheld scanner ($100-$200) using low-cost NIR spectrometers.
-
-
-
-Industrial Model: Drone-mounted BPS ($5,000) for large-scale applications in landfills or recycling plants.
-
-
-
-Partnerships: Collaborate with NGOs (e.g., Ocean Cleanup) or governments to subsidize costs and integrate with waste management systems.
-
-Prototype
-
-A simulation script (code/bioscore_simulation.py) demonstrates how BPS processes mock spectral data to predict biodegradability and assign a BioScore. Run it with:
-
-pip install scikit-learn numpy
-python code/bioscore_simulation.py
-
-Visuals
-
-
-
-
-
-Hardware Diagram:
-
-
-
-
-
-Workflow Flowchart:
-
-
-
-
-
-Device Mockup:
-
-
-
-FAQ
-
-
-
-
-
-How accurate is the BioScore? Trained on polymer datasets, with plans for lab validation with material scientists.
-
-
-
-Is it affordable? Consumer model targets $100-$200; industrial model subsidized via partnerships.
-
-
-
-How does it scale? Drone integration and API for waste management systems ensure scalability.
-
-
-
-What about complex plastics? Multi-spectrum scanning detects additives and polymer blends for accurate assessment.
-
-Future Work
-
-
-
-
-
-Build a physical prototype using Raspberry Pi and SCiO spectrometer.
-
-
-
-Collect real-world degradation data with university partners.
-
-
-
-Develop a mobile app for consumer use and API for industrial integration.
