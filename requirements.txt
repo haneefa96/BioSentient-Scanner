@@ -1,1 +1,4 @@
 Flask
+numpy==<version>
+opencv-python==<version>
+PyQt5==<version>
